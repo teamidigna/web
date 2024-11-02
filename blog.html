@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristik Blog 2100</title>
+    <style>
+        /* Temel Ayarlar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Neon Parıltı Efekti */
+        .neon {
+            color: #00FFFF;
+            text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
+            transition: text-shadow 0.3s ease, color 0.3s ease;
+        }
+        .neon:hover {
+            color: #FF00FF;
+            text-shadow: 0 0 7px #FF00FF, 0 0 15px #FF00FF, 0 0 30px #FF00FF;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 2em 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        header .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00FFFF;
+            text-transform: uppercase;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 3em;
+            list-style: none;
+            margin-top: 1.2em;
+        }
+        nav ul li a {
+            font-size: 1.2em;
+            color: #00FFFF;
+            text-shadow: 0 0 5px #00FFFF;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        nav ul li a:hover {
+            color: #FF00FF;
+            text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+        }
+
+        /* Ana İçerik */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2em;
+            padding: 3em 2em;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Blog Kartı */
+        .article-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2em;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, transparent, #00FFFF20, transparent 40%);
+            opacity: 0.3;
+            transform: scale(1.5);
+            transition: transform 0.5s ease;
+            z-index: 0;
+        }
+        .article-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 0, 255, 0.4);
+        }
+        .article-card:hover::before {
+            transform: scale(1);
+        }
+        .article-card h2 {
+            font-size: 1.8em;
+            color: #FFFFFF;
+            position: relative;
+            z-index: 1;
+        }
+        .meta {
+            color: #AAAAAA;
+            font-size: 0.9em;
+            position: relative;
+            z-index: 1;
+        }
+        .article-card p {
+            font-size: 1.1em;
+            color: #DDDDDD;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+        .button {
+            align-self: start;
+            padding: 0.7em 1.5em;
+            background-color: #00FFFF;
+            color: #000;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button:hover {
+            background-color: #FF00FF;
+            color: #FFF;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #AAAAAA;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><img src="img/logo.png" alt="Idigna." width="92" height="60"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main class="container">
+        <!-- Blog Kartı -->
+        <div class="article-card">
+            <h2>Geleceğin Tasarımları</h2>
+            <p class="meta">Tarih: 23 Nisan 1923</p>
+            <p>Açıklama</p>
+            <a href="blog-detay.html" class="button">Devamı</a>
+        </div>
+
+        <div class="article-card">
+            <h2>Başlık</h2>
+            <p class="meta">Tarih: 10 Kasım 1938</p>
+            <p>Açıklama</p>
+            <a href="blog-detay.html" class="button">Devamı</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Team İdigna #9502</p>
+    </footer>
+</body>
+</html>
